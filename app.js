@@ -5,6 +5,7 @@ const ROUTE_FILE_FALLBACK = [
   "Koike.gpx",
   "Takumi.gpx",
   "Tomoya.gpx",
+  "Yoh.gpx",
   "Yurino.gpx",
 ];
 
