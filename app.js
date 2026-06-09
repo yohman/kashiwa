@@ -20,7 +20,8 @@ const ROUTE_COLORS = [
   "#a7c942"
 ];
 
-const SPEEDS = [4, 8, 16, 32];
+const SPEEDS = [4, 8, 16, 32, 64, 128];
+const MANIFEST_URL = "manifest.json";
 const playPause = document.getElementById("playPause");
 const timeSlider = document.getElementById("timeSlider");
 const timeDisplay = document.getElementById("timeDisplay");
@@ -47,6 +48,8 @@ const state = {
   mapReady: false,
   initialized: false,
   photoMarkers: [],
+  manifest: null,
+  manifestRouteByFile: new Map(),
 };
 
 const map = new maplibregl.Map({
@@ -141,6 +144,18 @@ async function discoverRouteFiles() {
   }
 }
 
+async function loadManifest() {
+  try {
+    const response = await fetch(MANIFEST_URL, { cache: "no-store" });
+    if (!response.ok) {
+      return null;
+    }
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
 async function discoverPhotoFiles(routeName) {
   try {
     const rootEntries = await listDirectoryEntries("photos/");
@@ -182,7 +197,7 @@ function formatPhotoCaption(photo) {
 }
 
 function openPhotoModal(photo) {
-  photoModalImage.src = photo.url;
+  photoModalImage.src = photo.webUrl;
   photoModalImage.alt = photo.fileName;
   photoModalCaption.textContent = formatPhotoCaption(photo);
   photoModal.hidden = false;
@@ -458,7 +473,6 @@ function createPhotoMarkerElement(photo) {
   const element = document.createElement("button");
   element.type = "button";
   element.className = "photo-marker";
-  element.style.backgroundImage = `url("${photo.url}")`;
   element.setAttribute("aria-label", `Open photo ${photo.fileName}`);
   element.addEventListener("click", (event) => {
     event.stopPropagation();
@@ -468,6 +482,25 @@ function createPhotoMarkerElement(photo) {
 }
 
 async function buildRoutePhotos(route) {
+  const manifestRoute = state.manifestRouteByFile.get(route.id);
+  const manifestPhotos = manifestRoute?.photos;
+  if (Array.isArray(manifestPhotos)) {
+    return manifestPhotos
+      .map((photo) => ({
+        routeId: route.id,
+        route,
+        fileName: photo.file,
+        timeMs: Number(photo.timeMs),
+        displayTime: formatHandleTime(Number(photo.timeMs)),
+        webUrl: photo.webUrl,
+        coordinates: interpolatePosition(route, Number(photo.timeMs)),
+        marker: null,
+        element: null,
+        added: false,
+      }))
+      .filter((photo) => Number.isFinite(photo.timeMs));
+  }
+
   const photoFiles = await discoverPhotoFiles(route.name);
   const photos = [];
 
@@ -488,10 +521,11 @@ async function buildRoutePhotos(route) {
       fileName: photoFileName,
       timeMs,
       displayTime: formatHandleTime(timeMs),
-      url: `photos/${route.name}/${photoFileName}`,
+      webUrl: `photos/${route.name}/${photoFileName}`,
       coordinates: interpolatePosition(route, timeMs),
       marker: null,
       element: null,
+      added: false,
     });
   }
 
@@ -506,10 +540,7 @@ async function attachPhotoMarkers() {
       photo.marker = new maplibregl.Marker({
         element: photo.element,
         anchor: "center",
-      })
-        .setLngLat(photo.coordinates)
-        .addTo(map);
-      photo.element.classList.remove("is-visible");
+      }).setLngLat(photo.coordinates);
       state.photoMarkers.push(photo);
     }
   }
@@ -519,9 +550,17 @@ function updatePhotoMarkers() {
   for (const photo of state.photoMarkers) {
     const visibleRoute = !state.visibleRoute || state.visibleRoute === photo.routeId;
     const visibleTime = state.currentTimeMs >= photo.timeMs;
-    photo.element.classList.toggle("is-visible", visibleRoute && visibleTime);
-    if (photo.marker) {
-      photo.marker.getElement().style.pointerEvents = visibleRoute && visibleTime ? "auto" : "none";
+    const shouldShow = visibleRoute && visibleTime;
+
+    if (shouldShow && !photo.added && photo.marker) {
+      photo.element.style.backgroundImage = `url("${photo.webUrl}")`;
+      photo.marker.addTo(map);
+      photo.added = true;
+    }
+
+    photo.element.classList.toggle("is-visible", shouldShow);
+    if (photo.marker && photo.marker.getElement()) {
+      photo.marker.getElement().style.pointerEvents = shouldShow ? "auto" : "none";
     }
   }
 }
@@ -551,6 +590,21 @@ function updateSpeedBadges() {
     });
     speedBadges.appendChild(badge);
   });
+}
+
+function setSpeed(nextSpeed) {
+  if (!SPEEDS.includes(nextSpeed)) {
+    return;
+  }
+
+  state.speed = nextSpeed;
+  updateSpeedBadges();
+}
+
+function stepSpeed(direction) {
+  const currentIndex = SPEEDS.indexOf(state.speed);
+  const nextIndex = Math.max(0, Math.min(SPEEDS.length - 1, currentIndex + direction));
+  setSpeed(SPEEDS[nextIndex]);
 }
 
 function fitAllRoutes() {
@@ -669,6 +723,39 @@ function bindControls() {
     state.lastFrame = null;
     updateRouteLayers();
   });
+
+  document.addEventListener("keydown", (event) => {
+    const target = event.target;
+    const isTypingContext =
+      target instanceof HTMLElement &&
+      (target.tagName === "INPUT" ||
+        target.tagName === "TEXTAREA" ||
+        target.tagName === "SELECT" ||
+        target.isContentEditable);
+
+    if (isTypingContext) {
+      return;
+    }
+
+    if (event.code === "Space") {
+      event.preventDefault();
+      state.playing = !state.playing;
+      playPause.textContent = state.playing ? "Pause" : "Play";
+      state.lastFrame = null;
+      return;
+    }
+
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      stepSpeed(-1);
+      return;
+    }
+
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      stepSpeed(1);
+    }
+  });
 }
 
 async function maybeInitialize() {
@@ -687,7 +774,19 @@ async function maybeInitialize() {
 }
 
 async function loadRoutes() {
-  const routeFiles = await discoverRouteFiles();
+  state.manifest = await loadManifest();
+  state.manifestRouteByFile.clear();
+  if (state.manifest?.routes) {
+    for (const routeEntry of state.manifest.routes) {
+      if (routeEntry?.file) {
+        state.manifestRouteByFile.set(routeEntry.file, routeEntry);
+      }
+    }
+  }
+
+  const routeFiles = Array.isArray(state.manifest?.routes) && state.manifest.routes.length
+    ? state.manifest.routes.map((route) => route.file).filter(Boolean)
+    : await discoverRouteFiles();
   const routes = await Promise.all(
     routeFiles.map(async (file, index) => {
       const response = await fetch(`gpx/${normalizeEntryName(file)}`);

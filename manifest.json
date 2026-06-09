@@ -1,0 +1,376 @@
+{
+  "routes": [
+    {
+      "file": "Aoi.gpx",
+      "name": "Aoi",
+      "metadataName": "大森　葵",
+      "startMs": 1780388930000,
+      "endMs": 1780391519000,
+      "photos": [
+        {
+          "file": "IMG_8711.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8711.jpg",
+          "timeMs": 1780389140000,
+          "displayTime": "2026-06-02T08:32:20.000Z"
+        },
+        {
+          "file": "IMG_8713.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8713.jpg",
+          "timeMs": 1780389219000,
+          "displayTime": "2026-06-02T08:33:39.000Z"
+        },
+        {
+          "file": "IMG_8715.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8715.jpg",
+          "timeMs": 1780389616000,
+          "displayTime": "2026-06-02T08:40:16.000Z"
+        },
+        {
+          "file": "IMG_8717.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8717.jpg",
+          "timeMs": 1780389847000,
+          "displayTime": "2026-06-02T08:44:07.000Z"
+        },
+        {
+          "file": "IMG_8720.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8720.jpg",
+          "timeMs": 1780389900000,
+          "displayTime": "2026-06-02T08:45:00.000Z"
+        },
+        {
+          "file": "IMG_8721.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8721.jpg",
+          "timeMs": 1780390023000,
+          "displayTime": "2026-06-02T08:47:03.000Z"
+        },
+        {
+          "file": "IMG_8723.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8723.jpg",
+          "timeMs": 1780390083000,
+          "displayTime": "2026-06-02T08:48:03.000Z"
+        },
+        {
+          "file": "IMG_8727.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8727.jpg",
+          "timeMs": 1780390381000,
+          "displayTime": "2026-06-02T08:53:01.000Z"
+        },
+        {
+          "file": "IMG_8730.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8730.jpg",
+          "timeMs": 1780390628000,
+          "displayTime": "2026-06-02T08:57:08.000Z"
+        },
+        {
+          "file": "IMG_8732.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8732.jpg",
+          "timeMs": 1780390714000,
+          "displayTime": "2026-06-02T08:58:34.000Z"
+        },
+        {
+          "file": "IMG_8734.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8734.jpg",
+          "timeMs": 1780390784000,
+          "displayTime": "2026-06-02T08:59:44.000Z"
+        },
+        {
+          "file": "IMG_8736.HEIC",
+          "webUrl": "photos-web/Aoi/IMG_8736.jpg",
+          "timeMs": 1780390934000,
+          "displayTime": "2026-06-02T09:02:14.000Z"
+        }
+      ]
+    },
+    {
+      "file": "Daichi.gpx",
+      "name": "Daichi",
+      "metadataName": null,
+      "startMs": 1780388891000,
+      "endMs": 1780391532000,
+      "photos": [
+        {
+          "file": "IMG_7614.HEIC",
+          "webUrl": "photos-web/Daichi/IMG_7614.jpg",
+          "timeMs": 1780389134000,
+          "displayTime": "2026-06-02T08:32:14.000Z"
+        },
+        {
+          "file": "IMG_7615.HEIC",
+          "webUrl": "photos-web/Daichi/IMG_7615.jpg",
+          "timeMs": 1780389315000,
+          "displayTime": "2026-06-02T08:35:15.000Z"
+        },
+        {
+          "file": "IMG_7617.HEIC",
+          "webUrl": "photos-web/Daichi/IMG_7617.jpg",
+          "timeMs": 1780389324000,
+          "displayTime": "2026-06-02T08:35:24.000Z"
+        },
+        {
+          "file": "IMG_7618.HEIC",
+          "webUrl": "photos-web/Daichi/IMG_7618.jpg",
+          "timeMs": 1780389751000,
+          "displayTime": "2026-06-02T08:42:31.000Z"
+        },
+        {
+          "file": "IMG_7619.HEIC",
+          "webUrl": "photos-web/Daichi/IMG_7619.jpg",
+          "timeMs": 1780390441000,
+          "displayTime": "2026-06-02T08:54:01.000Z"
+        }
+      ]
+    },
+    {
+      "file": "Hikaru.gpx",
+      "name": "Hikaru",
+      "metadataName": null,
+      "startMs": 1780388888000,
+      "endMs": 1780391335000,
+      "photos": [
+        {
+          "file": "IMG_5261.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5261.jpg",
+          "timeMs": 1780388916000,
+          "displayTime": "2026-06-02T08:28:36.000Z"
+        },
+        {
+          "file": "IMG_5262.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5262.jpg",
+          "timeMs": 1780389271000,
+          "displayTime": "2026-06-02T08:34:31.000Z"
+        },
+        {
+          "file": "IMG_5263.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5263.jpg",
+          "timeMs": 1780389282000,
+          "displayTime": "2026-06-02T08:34:42.000Z"
+        },
+        {
+          "file": "IMG_5264.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5264.jpg",
+          "timeMs": 1780389320000,
+          "displayTime": "2026-06-02T08:35:20.000Z"
+        },
+        {
+          "file": "IMG_5265.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5265.jpg",
+          "timeMs": 1780389418000,
+          "displayTime": "2026-06-02T08:36:58.000Z"
+        },
+        {
+          "file": "IMG_5266.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5266.jpg",
+          "timeMs": 1780389491000,
+          "displayTime": "2026-06-02T08:38:11.000Z"
+        },
+        {
+          "file": "IMG_5267.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5267.jpg",
+          "timeMs": 1780389584000,
+          "displayTime": "2026-06-02T08:39:44.000Z"
+        },
+        {
+          "file": "IMG_5268.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5268.jpg",
+          "timeMs": 1780389606000,
+          "displayTime": "2026-06-02T08:40:06.000Z"
+        },
+        {
+          "file": "IMG_5269.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5269.jpg",
+          "timeMs": 1780389666000,
+          "displayTime": "2026-06-02T08:41:06.000Z"
+        },
+        {
+          "file": "IMG_5270.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5270.jpg",
+          "timeMs": 1780389716000,
+          "displayTime": "2026-06-02T08:41:56.000Z"
+        },
+        {
+          "file": "IMG_5271.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5271.jpg",
+          "timeMs": 1780389836000,
+          "displayTime": "2026-06-02T08:43:56.000Z"
+        },
+        {
+          "file": "IMG_5272.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5272.jpg",
+          "timeMs": 1780389886000,
+          "displayTime": "2026-06-02T08:44:46.000Z"
+        },
+        {
+          "file": "IMG_5273.JPG",
+          "webUrl": "photos-web/Hikaru/IMG_5273.jpg",
+          "timeMs": 1780389899000,
+          "displayTime": "2026-06-02T08:44:59.000Z"
+        }
+      ]
+    },
+    {
+      "file": "Koike.gpx",
+      "name": "Koike",
+      "metadataName": null,
+      "startMs": 1780388896000,
+      "endMs": 1780391207000,
+      "photos": []
+    },
+    {
+      "file": "Senri.gpx",
+      "name": "Senri",
+      "metadataName": null,
+      "startMs": 1780388897000,
+      "endMs": 1780391480000,
+      "photos": []
+    },
+    {
+      "file": "Takumi.gpx",
+      "name": "Takumi",
+      "metadataName": null,
+      "startMs": 1780388908000,
+      "endMs": 1780391746000,
+      "photos": []
+    },
+    {
+      "file": "Tomoya.gpx",
+      "name": "Tomoya",
+      "metadataName": null,
+      "startMs": 1780388891000,
+      "endMs": 1780390946000,
+      "photos": []
+    },
+    {
+      "file": "Touji.gpx",
+      "name": "Touji",
+      "metadataName": null,
+      "startMs": 1780388897000,
+      "endMs": 1780391514000,
+      "photos": []
+    },
+    {
+      "file": "Yoh.gpx",
+      "name": "Yoh",
+      "metadataName": null,
+      "startMs": 1780388906000,
+      "endMs": 1780391541000,
+      "photos": [
+        {
+          "file": "PXL_20260602_085530738.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085530738.MP.jpg",
+          "timeMs": 1780390530738,
+          "displayTime": "2026-06-02T08:55:30.738Z"
+        },
+        {
+          "file": "PXL_20260602_085550645.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085550645.MP.jpg",
+          "timeMs": 1780390550645,
+          "displayTime": "2026-06-02T08:55:50.645Z"
+        },
+        {
+          "file": "PXL_20260602_085554761.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085554761.MP.jpg",
+          "timeMs": 1780390554761,
+          "displayTime": "2026-06-02T08:55:54.761Z"
+        },
+        {
+          "file": "PXL_20260602_085701719.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085701719.MP.jpg",
+          "timeMs": 1780390621719,
+          "displayTime": "2026-06-02T08:57:01.719Z"
+        },
+        {
+          "file": "PXL_20260602_085724286.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085724286.MP.jpg",
+          "timeMs": 1780390644286,
+          "displayTime": "2026-06-02T08:57:24.286Z"
+        },
+        {
+          "file": "PXL_20260602_085732375.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085732375.MP.jpg",
+          "timeMs": 1780390652375,
+          "displayTime": "2026-06-02T08:57:32.375Z"
+        },
+        {
+          "file": "PXL_20260602_085736576.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085736576.MP.jpg",
+          "timeMs": 1780390656576,
+          "displayTime": "2026-06-02T08:57:36.576Z"
+        },
+        {
+          "file": "PXL_20260602_085759672.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085759672.MP.jpg",
+          "timeMs": 1780390679672,
+          "displayTime": "2026-06-02T08:57:59.672Z"
+        },
+        {
+          "file": "PXL_20260602_085948906.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_085948906.MP.jpg",
+          "timeMs": 1780390788906,
+          "displayTime": "2026-06-02T08:59:48.906Z"
+        },
+        {
+          "file": "PXL_20260602_090047071.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090047071.MP.jpg",
+          "timeMs": 1780390847071,
+          "displayTime": "2026-06-02T09:00:47.071Z"
+        },
+        {
+          "file": "PXL_20260602_090124058.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090124058.MP.jpg",
+          "timeMs": 1780390884058,
+          "displayTime": "2026-06-02T09:01:24.058Z"
+        },
+        {
+          "file": "PXL_20260602_090201232.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090201232.MP.jpg",
+          "timeMs": 1780390921232,
+          "displayTime": "2026-06-02T09:02:01.232Z"
+        },
+        {
+          "file": "PXL_20260602_090326061.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090326061.MP.jpg",
+          "timeMs": 1780391006061,
+          "displayTime": "2026-06-02T09:03:26.061Z"
+        },
+        {
+          "file": "PXL_20260602_090356332.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090356332.MP.jpg",
+          "timeMs": 1780391036332,
+          "displayTime": "2026-06-02T09:03:56.332Z"
+        },
+        {
+          "file": "PXL_20260602_090522461.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090522461.MP.jpg",
+          "timeMs": 1780391122461,
+          "displayTime": "2026-06-02T09:05:22.461Z"
+        },
+        {
+          "file": "PXL_20260602_090932523.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_090932523.MP.jpg",
+          "timeMs": 1780391372523,
+          "displayTime": "2026-06-02T09:09:32.523Z"
+        },
+        {
+          "file": "PXL_20260602_091023034.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_091023034.MP.jpg",
+          "timeMs": 1780391423034,
+          "displayTime": "2026-06-02T09:10:23.034Z"
+        },
+        {
+          "file": "PXL_20260602_091148223.MP.jpg",
+          "webUrl": "photos-web/Yoh/PXL_20260602_091148223.MP.jpg",
+          "timeMs": 1780391508223,
+          "displayTime": "2026-06-02T09:11:48.223Z"
+        }
+      ]
+    },
+    {
+      "file": "Yurino.gpx",
+      "name": "Yurino",
+      "metadataName": null,
+      "startMs": 1780388896000,
+      "endMs": 1780391573000,
+      "photos": []
+    }
+  ]
+}
