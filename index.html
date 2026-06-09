@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kashiwa After Dark</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css"
+    />
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <header class="panel title-panel">
+      <div class="eyebrow">Kashiwa After Dark</div>
+      <div class="subtitle">― 若者が交渉する夜の駅前空間 ―</div>
+    </header>
+
+    <div class="time-display" id="timeDisplay">--:--:--</div>
+
+    <section class="panel control-panel" aria-label="Route controls">
+      <div class="route-toolbar" id="routeToolbar"></div>
+
+      <div class="transport-row">
+        <button class="play-button" id="playPause" type="button" aria-label="Play or pause playback">
+          Play
+        </button>
+
+        <div class="speed-badges" id="speedBadges" aria-label="Playback speed"></div>
+      </div>
+
+      <div class="slider-row">
+        <div class="slider-meta" aria-hidden="true">
+          <span id="startTimeLabel">--:--</span>
+          <span id="endTimeLabel">--:--</span>
+        </div>
+        <div class="slider-stage">
+          <input
+            id="timeSlider"
+            class="time-slider"
+            type="range"
+            min="0"
+            max="100"
+            step="any"
+            value="0"
+            aria-label="Playback time"
+          />
+          <div id="currentTimeLabel" class="slider-current-time" aria-hidden="true">--:--</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="photoModal" class="photo-modal" hidden>
+      <div class="photo-modal-backdrop" data-close-modal="true"></div>
+      <div class="photo-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="photoModalCaption">
+        <button id="photoModalClose" class="photo-modal-close" type="button" aria-label="Close photo">
+          ×
+        </button>
+        <img id="photoModalImage" class="photo-modal-image" alt="" />
+        <div id="photoModalCaption" class="photo-modal-caption"></div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
