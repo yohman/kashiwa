@@ -17,6 +17,7 @@ const ROUTE_COLORS = [
   "#c3a35f",
   "#8f789d",
   "#6b9ea0",
+  "#a7c942"
 ];
 
 const SPEEDS = [4, 8, 16, 32];
